@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemVis | Equipment Parameter Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="login-screen" class="login-overlay">
+        <div class="card login-card">
+            <h2>Authentication</h2>
+            <div class="upload-section" style="margin-top: 1rem;">
+                <input type="text" id="username" placeholder="Username" class="btn" style="background: rgba(255,255,255,0.05); text-align: left; width: 100%;">
+                <input type="password" id="password" placeholder="Password" class="btn" style="background: rgba(255,255,255,0.05); text-align: left; width: 100%;">
+                <button onclick="handleLogin()" class="btn btn-primary">Login</button>
+            </div>
+            <p id="login-error" style="color: var(--accent-red); font-size: 0.8rem; margin-top: 0.5rem;"></p>
+        </div>
+    </div>
+
+    <div id="main-app" class="container hidden">
+        <header>
+            <h1>Equipment Parameter Visualizer</h1>
+            <p style="color: var(--text-muted)">Real-time chemical equipment data analytics</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="left-panel">
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>Upload Data</h3>
+                    <div class="upload-section" style="margin-top: 1rem;">
+                        <input type="file" id="csv-upload" accept=".csv" onchange="handleFileUpload(event)">
+                        <label for="csv-upload" class="file-label" id="drop-area">
+                            <span>Drop CSV or click to browse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Upload History</h3>
+                    <div id="history-list" class="history-list">
+                        <!-- History items populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div id="no-data" class="card" style="text-align: center; padding: 5rem;">
+                    <p style="color: var(--text-muted)">Upload a CSV file to view analytics</p>
+                </div>
+
+                <div id="data-display" class="hidden">
+                    <div class="stats-card">
+                        <div class="card stat-item">
+                            <span class="stat-label">Total Equipment</span>
+                            <div id="stat-count" class="stat-value">0</div>
+                        </div>
+                        <div class="card stat-item">
+                            <span class="stat-label">Avg. Flowrate</span>
+                            <div id="stat-flow" class="stat-value">0</div>
+                        </div>
+                        <div class="card stat-item">
+                            <span class="stat-label">Avg. Pressure</span>
+                            <div id="stat-pressure" class="stat-value">0</div>
+                        </div>
+                        <div class="card stat-item">
+                            <span class="stat-label">Avg. Temp</span>
+                            <div id="stat-temp" class="stat-value">0</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <h3>Equipment Type Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="typeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>Equipment Data Table</h3>
+                            <button id="download-pdf" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Export PDF</button>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table id="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Flow</th>
+                                        <th>Press</th>
+                                        <th>Temp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Rows populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

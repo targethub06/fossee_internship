@@ -1,0 +1,11 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Centrifugal Pump P-101,Pump,150.5,3.5,45.2
+Shell and Tube Exchanger E-201,Exchanger,0.0,2.8,185.0
+Vertical Storage Tank T-301,Tank,0.0,1.0,28.5
+Jacketed Reactor R-401,Reactor,92.4,12.5,210.0
+Globe Valve V-501,Valve,15.2,4.8,32.0
+Cooling Tower CT-101,Tower,1200.0,1.2,33.0
+Distillation Column C-601,Column,480.0,1.5,115.5
+Screw Compressor K-701,Compressor,300.0,8.5,55.0
+Plate Heat Exchanger E-202,Exchanger,0.0,2.2,160.0
+Horizontal Tank T-302,Tank,0.0,1.0,22.0

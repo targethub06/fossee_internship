@@ -1,0 +1,11 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Centrifugal Pump,Pump,120.5,3.2,45.0
+Heat Exchanger A,Exchanger,0.0,2.5,180.0
+Distillation Column,Column,450.0,1.2,110.5
+Storage Tank 1,Tank,0.0,1.0,25.0
+Reactor R-101,Reactor,85.0,15.0,250.0
+Centrifugal Pump B,Pump,115.0,3.0,42.0
+Heat Exchanger B,Exchanger,0.0,2.8,175.0
+Valves-01,Valve,10.0,5.0,30.0
+Mixer M-50,Mixer,55.0,1.5,60.0
+Cooling Tower,Tower,1000.0,1.1,35.0
